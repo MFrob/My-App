@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var number: UITextField!
     
     @IBAction func guess(sender: AnyObject) {
-        if feedback.text == "First Guess" {
+        if feedback.text == "Guess" {
             randomNumber.nextNumber()
             if randomNumber.number == Int(number.text!) {
                 correct()
@@ -33,21 +33,19 @@ class ViewController: UIViewController {
                 incorrect()
             }
         }
+        number.text = ""
     }
     
     func correct() {
         score.text = String(Int(score.text!)! + 1)
-        feedback.text = "Correct!"
-        sleep(2)
-        feedback.text = "First Guess"
+//        feedback.text = "Correct!"
+        feedback.text = "Guess"
     }
     
     func incorrect() {
-        feedback.text = "Incorrect"
-        sleep(2)
-        feedback.text = String(format: "Number was %d", randomNumber.number)
-        sleep(2)
-        feedback.text = "First Guess"
+//        feedback.text = "Incorrect"
+//        feedback.text = String(format: "Number was %d", randomNumber.number)
+        feedback.text = "Guess"
     }
     
     override func viewDidLoad() {

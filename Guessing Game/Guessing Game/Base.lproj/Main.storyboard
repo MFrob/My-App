@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,48 +20,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7t-ch-uGp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7t-ch-uGp">
                                 <rect key="frame" x="20" y="28" width="59" height="21"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="b0V-dz-nNk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twp-l5-GdR">
-                                <rect key="frame" x="82" y="28" width="498" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twp-l5-GdR">
+                                <rect key="frame" x="86" y="28" width="498" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Guess" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-pa-0Qz">
-                                <rect key="frame" x="172" y="265" width="257" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-pa-0Qz">
+                                <rect key="frame" x="172" y="87" width="257" height="70"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="Rrf-c9-1fg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-gV-1qe">
-                                <rect key="frame" x="277" y="483" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53c-HK-szk">
+                                <rect key="frame" x="301" y="272" width="68" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="EQg-h9-bxy"/>
+                                </constraints>
+                                <state key="normal" title="Range"/>
+                                <connections>
+                                    <action selector="setRange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuy-YS-zfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwE-gV-1qe">
+                                <rect key="frame" x="252" y="272" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2sR-P3-pK6"/>
+                                    <constraint firstAttribute="width" constant="46" id="pW3-hb-jbc"/>
+                                </constraints>
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="guess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J3x-FU-ylc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjD-Lh-bGk">
-                                <rect key="frame" x="247" y="425" width="106" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdD-6m-CKI">
+                                <rect key="frame" x="252" y="218" width="97" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uFH-Dh-4Qd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="twp-l5-GdR" firstAttribute="leading" secondItem="B7t-ch-uGp" secondAttribute="trailing" constant="7" id="26t-8k-Q9h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bwE-gV-1qe" secondAttribute="bottom" constant="298" id="BjR-q8-XvK"/>
+                            <constraint firstItem="bwE-gV-1qe" firstAttribute="baseline" secondItem="53c-HK-szk" secondAttribute="baseline" id="H5q-fR-PFj"/>
+                            <constraint firstItem="bwE-gV-1qe" firstAttribute="leading" secondItem="tdD-6m-CKI" secondAttribute="leading" id="MqF-P6-2Uh"/>
+                            <constraint firstItem="RtJ-pa-0Qz" firstAttribute="top" secondItem="twp-l5-GdR" secondAttribute="bottom" constant="38" id="S5P-8q-hkc"/>
+                            <constraint firstItem="RtJ-pa-0Qz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UH0-qt-XXB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="twp-l5-GdR" secondAttribute="trailing" constant="-4" id="ZK4-Kn-X7K"/>
+                            <constraint firstItem="tdD-6m-CKI" firstAttribute="top" secondItem="RtJ-pa-0Qz" secondAttribute="bottom" constant="61" id="dD7-TK-xUn"/>
+                            <constraint firstItem="bwE-gV-1qe" firstAttribute="top" secondItem="tdD-6m-CKI" secondAttribute="bottom" constant="24" id="fcV-VL-3yt"/>
+                            <constraint firstItem="B7t-ch-uGp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gw4-KH-IaC"/>
+                            <constraint firstItem="B7t-ch-uGp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="h3P-o8-tsP"/>
+                            <constraint firstItem="RtJ-pa-0Qz" firstAttribute="centerX" secondItem="tdD-6m-CKI" secondAttribute="centerX" id="oOE-Yq-hhz"/>
+                            <constraint firstItem="twp-l5-GdR" firstAttribute="centerX" secondItem="53c-HK-szk" secondAttribute="centerX" id="oWm-zl-ISp"/>
+                            <constraint firstItem="53c-HK-szk" firstAttribute="leading" secondItem="bwE-gV-1qe" secondAttribute="trailing" constant="3" id="xRb-zJ-1FR"/>
+                            <constraint firstItem="twp-l5-GdR" firstAttribute="baseline" secondItem="B7t-ch-uGp" secondAttribute="firstBaseline" id="zS9-WS-Jg2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="feedback" destination="RtJ-pa-0Qz" id="HM5-y2-6L1"/>
-                        <outlet property="number" destination="jjD-Lh-bGk" id="juu-MJ-rNu"/>
+                        <outlet property="number" destination="tdD-6m-CKI" id="dqN-j5-teS"/>
                         <outlet property="score" destination="twp-l5-GdR" id="KHs-R6-f0h"/>
                     </connections>
                 </viewController>

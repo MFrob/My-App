@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var feedback: UILabel!
     @IBOutlet weak var number: UITextField!
-
     
     // When the range button is pressed, change the range of the randomNumber object.
     @IBAction func setRange(sender: AnyObject) {
